@@ -11,7 +11,7 @@ function Hero(props) {
 
     return (
         <div className={[classes.Hero, ' container'].join(' ')}>
-            <h1>Designer & <span>Developper</span></h1>
+            <h1>Designer & <span>Developeur</span></h1>
             <div className={ classes.wrapper }>
                 <p>
                     Bonjour, je m'appelle Ansaka, je suis un développeur web 
