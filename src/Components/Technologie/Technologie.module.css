@@ -1,0 +1,15 @@
+.technologie__item {
+    margin-right: 15px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+:global .color__blue {
+    color: var(--secondary);
+    transition: all .3s ease-in-out;
+}
+
+:global .color__blue:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+}

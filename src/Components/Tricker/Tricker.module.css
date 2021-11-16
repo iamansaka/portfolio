@@ -1,0 +1,38 @@
+.Tricker {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--primary);
+    padding: 10px 0;
+}
+
+.Tricker__container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    width: fit-content;
+    will-change: transform;
+    animation: animation-tricker 60s linear infinite;
+}
+
+.Tricker__item {
+    color: var(--white);
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+.Tricker__item::before {
+    content: " - ";
+    color: var(--white);
+}
+
+
+@keyframes animation-tricker {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}

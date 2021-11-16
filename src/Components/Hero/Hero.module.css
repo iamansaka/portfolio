@@ -1,0 +1,30 @@
+.Hero {
+    height: 100vh;
+    padding-top: 10rem;
+}
+
+.Hero h1 {
+    font-family: 'Abril Fatface', cursive, sans-serif;
+    font-size: 145px;
+    text-transform: uppercase;
+}
+
+.Hero > h1 > span {
+    display: block;
+    text-align: right;
+}
+
+.Hero p {
+    font-size: 28px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 18.7vw;
+}
+
+:global .technologie {
+    display: flex;
+    margin-top: 15px;
+}

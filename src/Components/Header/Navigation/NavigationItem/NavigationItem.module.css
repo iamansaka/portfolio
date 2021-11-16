@@ -1,0 +1,26 @@
+.Navigation__item {
+    counter-increment: item 1;
+}
+
+.Navigation__item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.Navigation__item a {
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    transition: color .3s;
+}
+
+.Navigation__item a:hover {
+    color: var(--secondary);
+}
+
+.Navigation__item a::before {
+    content: "0" counter(item) ".";
+    display: block;
+    font-size: .9rem;
+    font-weight: 400;
+}

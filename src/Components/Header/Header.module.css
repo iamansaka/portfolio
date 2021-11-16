@@ -1,0 +1,17 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--primary);
+    padding: 20px 0;
+    padding-top: 50px;
+}
+
+.logo {
+    font-family: .9rem;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
