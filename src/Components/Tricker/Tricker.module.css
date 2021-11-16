@@ -14,6 +14,10 @@
     animation: animation-tricker 60s linear infinite;
 }
 
+.Tricker__container:hover {
+    animation-play-state: paused;
+}
+
 .Tricker__item {
     color: var(--white);
     margin-right: 5px;
