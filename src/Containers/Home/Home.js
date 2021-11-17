@@ -1,11 +1,10 @@
 // Librairie
 import React, { useState } from "react";
-import data from "../../Config/data";
+// import data from "../../Config/data";
 
 // Composant
 import Hero from "../../Components/Hero/Hero";
 import Projects from "../../Components/Projects/Projects";
-import Tricker from "../../Components/Tricker/Tricker";
 
 function Home() {
 
@@ -33,7 +32,6 @@ function Home() {
                 <Hero skills={ skills } />
                 <Projects projets={ projets } />
             </div>
-            <Tricker text="web designer;developpeur fullstack;" />
         </>
     )
 }

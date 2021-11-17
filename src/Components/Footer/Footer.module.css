@@ -1,0 +1,16 @@
+.Footer {
+    border-top: 1px solid var(--primary);
+    padding: 20px 0;
+}
+
+.Footer_columns {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Footer_column {
+    font-weight: 500;
+    transition: all .4s ease-in-out;
+}

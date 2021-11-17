@@ -14,7 +14,9 @@
 }
 
 .ProjetItem__content {
+    display: grid;
     grid-area: 1 / 1 / 1 / 6;
+    grid-template-rows: repeat(2, max-content);
 }
 
 .ProjetItem__content > * {
@@ -60,4 +62,8 @@
     opacity: .7;
     font-weight: 400;
     padding: 0;
+}
+
+.ProjetItem__link {
+    align-self: end;
 }

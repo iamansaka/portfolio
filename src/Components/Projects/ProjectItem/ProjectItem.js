@@ -4,6 +4,7 @@ import classes from './ProjectItem.module.css';
 
 // Composant
 import Technologie from "../../Technologie/Technologie";
+import Button from "../../Ui/Button/Button";
 
 function ProjetItem(props) {
 
@@ -21,6 +22,9 @@ function ProjetItem(props) {
                 <ul className="technologie">
                     { skills }
                 </ul>
+                <div className={ classes.ProjetItem__link }>
+                    <Button />
+                </div>
             </div>
             <div className={ classes.ProjetItem__image}>
                 <a href="#">

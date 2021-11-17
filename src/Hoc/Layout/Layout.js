@@ -4,6 +4,8 @@ import classes from './Layout.module.css';
 
 // Composant
 import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer";
+import Tricker from "../../Components/Tricker/Tricker";
 
 function Layout(props) {
     return (
@@ -13,7 +15,9 @@ function Layout(props) {
 
             {props.children}
 
-            {/* Header */}
+            {/* Footer */}
+            <Footer />
+            <Tricker text="web designer;developpeur fullstack;" />
         </>
     )
 }
