@@ -1,0 +1,24 @@
+:global .title {
+    font-weight: 600;
+    font-size: .8rem;
+    color: #a3a3a3;
+    margin: 15px 0;
+}
+
+.Bio p {
+    margin-bottom: 20px;
+}
+
+.text_small  {
+    font-size: .8rem;
+    color: #a3a3a3;
+}
+
+.Bio a {
+    display: block;
+    /* text-decoration: none; */
+    color: inherit;
+    font-weight: 600;
+    text-underline-offset: 8px;
+    margin-bottom: 50px;
+}

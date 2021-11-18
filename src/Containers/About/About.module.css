@@ -1,0 +1,21 @@
+.About {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 5rem;
+}
+
+.About_content {
+    width: 60%;
+}
+
+.About_img {
+    width: 100%;
+}
+
+.About_img img {
+    width: 100%;
+    max-width: 90%;
+    object-fit: cover;
+    height: 400px;
+}

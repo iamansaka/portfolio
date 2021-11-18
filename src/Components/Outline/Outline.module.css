@@ -1,0 +1,36 @@
+.Outline {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    transform: translateX(-15px);
+    margin-top: 10rem;
+    padding: 20px 0;
+}
+
+.Outile_row {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    width: -moz-fit-content;
+    width: fit-content;
+    will-change: transform;
+    
+    font-weight: 900;
+    font-size: 144px;
+    /* letter-spacing: -0.04em; */
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.Outile_row span {
+    margin: 0 30px;
+    -webkit-text-stroke: .01em #000;
+    text-stroke: 1px #000;
+    color: transparent;
+    white-space: nowrap;
+}
+
+.Outline .Outile_row:last-child {
+    margin-left: -51vw;
+}

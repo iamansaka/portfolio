@@ -9,16 +9,18 @@ import Tricker from "../../Components/Tricker/Tricker";
 
 function Layout(props) {
     return (
-        <>
-            {/* Header */}
+        <div className={classes.Layout}>
             <Header />
 
-            {props.children}
+            <main className={classes.content}>
+                {props.children}
+            </main>
 
-            {/* Footer */}
-            <Footer />
-            <Tricker text="web designer;developpeur fullstack;" />
-        </>
+            <>
+                <Footer />
+                <Tricker text="web designer;developpeur fullstack; concepteur ui/ux;" />
+            </>
+        </div>
     )
 }
 
