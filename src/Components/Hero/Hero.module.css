@@ -10,24 +10,25 @@
 
 .Hero h1 {
     font-family: 'Abril Fatface', cursive, sans-serif;
-    font-size: 9.38vw;
+    font-size: 12vw;
     text-transform: uppercase;
     line-height: 1;
 }
 
 .Hero > h1 > span {
     display: block;
-    font-size: 8.04vw;
+    font-size: 16vw;
+    margin-bottom: 15px;
 }
 
 .Hero > h1 > span,
 .wrapper {
-    width: 60%;
-    margin-left: calc(100% - 60%);
+    width: 100%;
+    margin-left: 0;
 }
 
 .Hero p {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .wrapper {
@@ -37,5 +38,39 @@
 
 :global .technologie {
     display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
     margin-top: 15px;
+}
+
+
+/*================ Responsive  ================*/
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+    .Hero h1 {
+        font-size: 9.38vw;
+    }
+
+    .Hero > h1 > span,
+    .wrapper {
+        width: 60%;
+        margin-left: calc(100% - 60%);
+    }
+
+    .Hero > h1 > span {
+        display: block;
+        font-size: 8.04vw;
+        margin-bottom: 0;
+    }
+
+    .Hero p {
+        font-size: 28px;
+    }
+
+    :global .technologie {
+        display: flex;
+        margin-top: 15px;
+        margin-left: 0;
+    }
 }

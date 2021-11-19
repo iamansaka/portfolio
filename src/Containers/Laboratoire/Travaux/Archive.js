@@ -1,8 +1,15 @@
 // Librairie
-import React from "react";
+import React, { useState } from "react";
 import classes from './Archive.module.css';
 
+// Composant
+import ToolBox from "../../../Components/Toolbox/Toolbox";
+
 function Archive(props) {
+
+    // State
+    const [couleurs, setCouleurs] = useState(["#000", "#753188", "#148EFB"]);
+    const [outils, setOutils] = useState(["figma", "Github"]);
 
     console.log(props);
 
@@ -13,7 +20,8 @@ function Archive(props) {
             <div className={ classes.Archive_img }>
                 <img src="https://cdn.dribbble.com/users/2268952/screenshots/15858805/media/2ef259f6ac1bfca532afa586698f162b.png" />
             </div>
-            <h2>Palette de couleurs</h2>
+            <ToolBox type="couleurs" items={ couleurs } />
+            <ToolBox type="outils" items={ outils } />
         </div>
     );
 }

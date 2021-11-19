@@ -17,7 +17,7 @@
     will-change: transform;
     
     font-weight: 900;
-    font-size: 144px;
+    font-size: 60px;
     /* letter-spacing: -0.04em; */
     text-transform: uppercase;
     line-height: 1;
@@ -33,4 +33,15 @@
 
 .Outline .Outile_row:last-child {
     margin-left: -51vw;
+}
+
+/*================ Responsive  ================*/
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+
+    .Outile_row {
+        font-weight: 900;
+        font-size: 144px;
+    }
 }

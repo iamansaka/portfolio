@@ -14,3 +14,16 @@
     font-weight: 500;
     transition: all .4s ease-in-out;
 }
+
+.Footer_column:nth-child(2) {
+    visibility: hidden;
+}
+
+/*================ Responsive  ================*/
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+    .Footer_column:nth-child(2) {
+        visibility: visible;
+    }
+}
