@@ -1,5 +1,5 @@
 // Librairies
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import routes from "../../Config/Routes";
 import classes from './Header.module.css';
@@ -8,6 +8,26 @@ import classes from './Header.module.css';
 import Navigation from "./Navigation/Navigation";
 
 function Header() {
+
+    const [menuToggle, setMenuToggle] = useState(false);
+    const [largeurEcran, setLargeurEcran] = useState(window.innerWidth);
+
+    const handleShowMenu = () => {
+        setMenuToggle(!menuToggle);
+    }
+
+    useEffect(() => {
+        const innerWidth = () => {
+            setLargeurEcran(window.innerWidth);
+        }
+        
+        window.addEventListener('resize', innerWidth)
+
+        return () => {
+            window.removeEventListener('resize', innerWidth)
+        }
+    }, [])
+
     return (
         <header className={[classes.Header, ' container'].join(' ')}>
             <div className={ classes.logo }>
@@ -16,9 +36,15 @@ function Header() {
                     Développeur web
                 </Link>
             </div>
-            <nav aria-label="main navigation">
-                <Navigation />
-            </nav>
+            { (menuToggle || largeurEcran > 768) && (
+                <nav aria-label="main navigation">
+                    <Navigation />
+                </nav>
+            )}
+
+            <button className={ classes.menu_burger } onClick={ handleShowMenu }>
+                <span className={ classes.menu_burger_bar }></span>
+            </button>
         </header>
     );
 }

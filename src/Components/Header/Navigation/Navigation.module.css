@@ -1,4 +1,14 @@
 .Navigation {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
+}
+
+/*================ Responsive  ================*/
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+    .Navigation {
+        flex-flow: row wrap;
+    }
+    
 }
