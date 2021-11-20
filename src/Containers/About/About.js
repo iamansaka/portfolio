@@ -1,8 +1,8 @@
-// Librairie
+// Librairies
 import React, { useState, useEffect }  from "react";
 import classes from './About.module.css';
 
-// Composant
+// Composants
 import Outline from "../../Components/Outline/Outline";
 import Bio from "../../Components/Bio/Bio";
 import Skills from "../../Components/Skills/Skills";

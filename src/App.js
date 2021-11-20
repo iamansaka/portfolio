@@ -4,13 +4,10 @@ import { Route, Switch } from 'react-router-dom';
 import routes from './Config/Routes';
 import './App.css';
 
-// Composant
+// Composants
 import Layout from './Hoc/Layout/Layout.js';
-import Home from './Containers/Home/Home';
-import About from './Containers/About/About';
-import Laboratoire from './Containers/Laboratoire/Laboratoire';
-import Archive from './Containers/Laboratoire/Travaux/Archive';
-import PageNotFund from './Containers/PageNotFound/PageNotFound';
+import { Home, About, Laboratoire, Archive, PageNotFund } from './Containers/index';
+
 
 function App() {
   return (

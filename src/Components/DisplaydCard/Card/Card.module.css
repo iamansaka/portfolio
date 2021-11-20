@@ -1,0 +1,66 @@
+.Card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.Card article {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.Card article::before {
+    position: absolute;
+    content: attr(data-year);
+    color: #D4D4D4;
+    font-size: 50px;
+    font-weight: 800;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    top: -31px;
+    left: 0;
+    z-index: -1;
+}
+
+.Article_title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.Article_content {
+    margin: 15px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: contain;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.Article_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-top: 1px dashed var(--primary);
+    border-bottom: 1px dashed var(--primary);
+}
+
+.Article_footer p {
+    flex: fill;
+    margin-right: 15px;
+}
+
+.Article_footer svg {
+    width: 5%;
+    margin-right: 15px;
+}

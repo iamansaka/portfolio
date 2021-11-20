@@ -1,4 +1,4 @@
-// Librairie
+// Librairies
 import React, { useState } from "react";
 import classes from './Archive.module.css';
 
@@ -8,7 +8,7 @@ import ToolBox from "../../../Components/Toolbox/Toolbox";
 function Archive(props) {
 
     // State
-    const [couleurs, setCouleurs] = useState(["#000", "#753188", "#148EFB"]);
+    const [couleurs, setCouleurs] = useState(["#000", "#753188", "#148EFB", "#2E4C6D", "#FF7800", "#71DFE7", "#AE4CCF", "#142F43", "#C85C5C"]);
     const [outils, setOutils] = useState(["figma", "Github"]);
 
     console.log(props);

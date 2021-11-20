@@ -25,10 +25,8 @@
 
 .Outile_row span {
     margin: 0 30px;
-    -webkit-text-stroke: .01em #000;
-    text-stroke: 1px #000;
-    color: transparent;
-    white-space: nowrap;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
 }
 
 .Outline .Outile_row:last-child {

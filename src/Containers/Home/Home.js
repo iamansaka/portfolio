@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 // import data from "../../Config/data";
 
-// Composant
+// Composants
 import Hero from "../../Components/Hero/Hero";
 import Projects from "../../Components/Projects/Projects";
 

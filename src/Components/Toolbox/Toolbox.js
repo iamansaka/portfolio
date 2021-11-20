@@ -1,11 +1,19 @@
 // Librairie
-import React from "react";
+import React, { useState } from "react";
 import classes from './Toolbox.module.css';
 
 const PaletteCouleurs = (props) => {
+
+    const [copySuccess, setCopySuccess] = useState('');
+
+    const copyColor = (color) => {
+        navigator.clipboard.writeText(color);
+        setCopySuccess('Copié !')
+    }
+
     return (
         <li className={ classes.Palette }>
-            <div style={{backgroundColor: props.color}} className={ classes.PaletteCouleur }></div>
+            <div onClick={() => copyColor(props.color)} style={{backgroundColor: props.color}} className={ classes.PaletteCouleur }>{ copySuccess ? copySuccess : null }</div>
             <p>{ props.color}</p>
         </li>
     );

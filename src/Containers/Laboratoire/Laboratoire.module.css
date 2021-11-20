@@ -1,0 +1,11 @@
+.Laboratoire h1 {
+    font-size: 90px;
+    text-transform: uppercase;
+}
+
+.Laboratoire h1 span {
+    display: block;
+    line-height: .85;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+}
