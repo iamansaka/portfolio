@@ -1,5 +1,5 @@
 // Librairie
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classes from './Layout.module.css';
 
 // Composant
@@ -8,8 +8,25 @@ import Footer from "../../Components/Footer/Footer";
 import Tricker from "../../Components/Tricker/Tricker";
 
 function Layout(props) {
+
+    const [scrollPos, setScrollPos] = useState(window.scrollY);
+
+    useEffect(() => {
+        const scrollBackground = () => {
+            setScrollPos(window.scrollY);
+            console.log(scrollPos);
+        }
+
+        window.addEventListener('scroll', scrollBackground);
+        return () => {
+            window.removeEventListener('scroll', scrollBackground);
+        }
+    }, [])
+
+    console.log(scrollPos);
+
     return (
-        <div className={classes.Layout}>
+        <div className={[classes.Layout, scrollPos > 150 ? classes.background: null].join(' ')}>
             <Header />
 
             <main className={classes.content}>

@@ -18,7 +18,7 @@
 
 .Header nav {
     position: absolute;
-    transform: translateY(13.8rem);
+    transform: translateY(11.2rem);
     border-radius: 10px;
     padding: 20px;
     background-color: var(--secondary);
@@ -26,7 +26,11 @@
     z-index: 10;
 }
 
+/* Menu burger */
 .menu_burger {
+    width: 50px;
+    height: 30px;
+    background: transparent;
     cursor: pointer;
 }
 
@@ -38,6 +42,7 @@
     width: 50px;
     height: 4px;
     background-color: var(--primary);
+    transition: all .4s ease-in-out;
 }
 
 .menu_burger_bar::before,
@@ -54,6 +59,21 @@
 .menu_burger_bar::after {
     transform: translateY(12px);
 }
+
+/* Menu burger toggle */
+.Header.show_menu .menu_burger_bar {
+    width: 0;
+    background: transparent;
+}
+
+.Header.show_menu .menu_burger_bar::before{
+    transform: rotate(45deg);
+}
+
+.Header.show_menu .menu_burger_bar::after{
+    transform: rotate(-45deg);
+}
+
 
 /*================ Responsive  ================*/
 /* 48em = 768px */

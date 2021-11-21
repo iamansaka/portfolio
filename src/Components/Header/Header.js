@@ -29,7 +29,7 @@ function Header() {
     }, [])
 
     return (
-        <header className={[classes.Header, ' container'].join(' ')}>
+        <header className={[classes.Header, menuToggle ? classes.show_menu: null,'container'].join(' ')}>
             <div className={ classes.logo }>
                 <Link to={ routes.HOME }>
                     Mahamoudou Ansaka<br/>
@@ -38,7 +38,7 @@ function Header() {
             </div>
             { (menuToggle || largeurEcran > 768) && (
                 <nav aria-label="main navigation">
-                    <Navigation />
+                    <Navigation menuShow={ handleShowMenu } />
                 </nav>
             )}
 
