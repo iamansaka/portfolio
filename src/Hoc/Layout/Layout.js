@@ -23,7 +23,7 @@ function Layout(props) {
         }
     }, [])
 
-    console.log(scrollPos);
+    // console.log(scrollPos);
 
     return (
         <div className={[classes.Layout, scrollPos > 165 ? classes.background: null].join(' ')}>

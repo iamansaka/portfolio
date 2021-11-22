@@ -1,6 +1,6 @@
 // Librairie
-import React, { useState } from "react";
-// import data from "../../Config/data";
+import React, { useEffect, useState } from "react";
+import apiAxios from "../../Config/api.axios";
 
 // Composants
 import Hero from "../../Components/Hero/Hero";
@@ -8,23 +8,25 @@ import Projects from "../../Components/Projects/Projects";
 
 function Home() {
 
-    const [skills, setSkills] = useState(["frontend", "reactjs", "vuejs", "symfony"])
-    const [projets, setprojets] = useState([
-        {
-            name: 'Symfony Online',
-            slug: 'symfony-online',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac rutrum mi. Quisque vulputate vehicula lorem cursus mollis.',
-            image: 'https://amahamoudou-dev.dawan.ovh/assets/img/shot-symfony-online.png',
-            technologie: ["Html", "scss", "javascript", "webpack", "php", "symfony", "Adobe XD"],
-        },
-        {
-            name: 'Stock Manager',
-            slug: 'stock-manager',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac rutrum mi. Quisque vulputate vehicula lorem cursus mollis.',
-            image: 'https://amahamoudou-dev.dawan.ovh/assets/img/shot-naga.png',
-            technologie: [ "Html", "scss", "javascript", "php", "symfony", "figma"],
-        },
-    ])
+    const [skills, setSkills] = useState(["frontend", "reactjs", "vuejs", "symfony"]);
+    const [projets, setProjets] = useState([]);
+
+    useEffect(() => {
+        apiAxios.get('/works')
+                .then(response => {
+                    let dataArray = [];
+
+                    for (let key in response.data) {
+                        dataArray.push({
+                            ...response.data[key],
+                            id: response.data[key]
+                        })
+                    }
+                    console.log(dataArray);
+                    setProjets(dataArray);
+                })
+                .catch(err => console.log(err))
+    }, [])
 
     return (
         <>

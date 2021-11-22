@@ -5,6 +5,8 @@ import classes from './ProjectItem.module.css';
 // Composant
 import Technologie from "../../Technologie/Technologie";
 import Button from "../../Ui/Button/Button";
+import { Link } from "react-router-dom";
+import routes from "../../../Config/Routes";
 
 function ProjetItem(props) {
 
@@ -17,21 +19,21 @@ function ProjetItem(props) {
     return (
         <div className={ classes.ProjetItem }>
             <div className={ classes.ProjetItem__content}>
-                <h3>{ props.name }</h3>
+                <h3>{ props.title }</h3>
                 <p>{ props.description }</p>
                 <ul className="technologie">
                     { skills }
                 </ul>
                 <div className={ classes.ProjetItem__link }>
-                    <Button />
+                    <Button link={ routes.LABORATOIRE +'/'+ props.slug } />
                 </div>
             </div>
             <div className={ classes.ProjetItem__image}>
-                <a href="#">
+                <Link to={ routes.LABORATOIRE +'/'+ props.slug }>
                     <div style={{maxWidth: '700px', display: 'block'}}>
                         <img src={ props.image } />
                     </div>
-                </a>
+                </Link>
             </div>
         </div>
     );

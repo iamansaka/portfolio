@@ -74,3 +74,13 @@
         margin-left: 0;
     }
 }
+
+
+/* 61.118em = 979px */
+
+@media (max-width: 61.118em) {
+
+    .Hero p {
+        font-size: 20px;
+    }
+}

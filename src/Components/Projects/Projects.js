@@ -11,9 +11,10 @@ function Projects(props) {
     let listProjets = props.projets.map((projet, index) => {
                                         return (<ProjetItem 
                                                     key={ index } 
-                                                    name={ projet.name }
-                                                    description={ projet.description }
-                                                    technologie={ projet.technologie }
+                                                    title={ projet.title }
+                                                    slug={ projet.slug }
+                                                    description={ projet.content }
+                                                    technologie={ projet.technologies }
                                                     image={ projet.image }
                                                 />)
                                     })

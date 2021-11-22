@@ -23,7 +23,7 @@ const Outils = (props) => {
     return (
         <li className={ classes.Outil }>
         <span>
-            <img src={`/outils/${ props.outil }.svg`} alt={ props.outil } />
+            <img src={`/outils/${ props.outil.replace(' ','-').toLowerCase() }.svg`} alt={ props.outil } />
         </span>
             <p>{ props.outil }</p>
         </li>
@@ -34,6 +34,7 @@ function ToolBox(props) {
 
     let content;
     let title;
+    console.log(props.items);
 
     switch (props.type) {
         case "couleurs":

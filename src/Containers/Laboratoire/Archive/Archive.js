@@ -1,22 +1,46 @@
 // Librairies
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from './Archive.module.css';
+import apiAxios from "../../../Config/api.axios";
 
 // Composant
 import ToolBox from "../../../Components/Toolbox/Toolbox";
+import Technologie from "../../../Components/Technologie/Technologie";
 
 function Archive(props) {
 
     // State
-    const [couleurs, setCouleurs] = useState(["#000", "#753188", "#148EFB", "#2E4C6D", "#FF7800", "#71DFE7", "#AE4CCF", "#142F43", "#C85C5C"]);
-    const [outils, setOutils] = useState(["figma", "Github"]);
+    const [technologies, setTechnologies] = useState([]);
+    const [couleurs, setCouleurs] = useState([]);
+    const [outils, setOutils] = useState([]);
+    const [projet, setProjet] = useState({})
 
-    console.log(props);
+    useEffect(() => {
+        apiAxios.get(`/works/${props.match.params.slug}`)
+                .then(response => {
+                    for (let key in response.data) {
+                        setProjet({...response.data[key]});
+                        setCouleurs(response.data[key].palettes);
+                        setOutils(response.data[key].outils);
+                        setTechnologies(response.data[key].technologies)
+                    }
+                })
+                .catch(err => console.log(err))
+    }, [])
+
+    let skills = technologies.map(skill => (
+        <Technologie key={ skill } color="color__gray" technologie={ skill } />
+    ));
 
     return (
         <div className={[classes.Archive, 'container'].join(' ')}>
-            <h1>Travaux ({props.match.params.id})</h1>
-            <p>Version 3 du portfolio réalisé pour présenter mes créations et mes expériences (Oui oui c'est moi, le site que vous êtes en train de visiter). </p>
+            <h1>{ projet.title }</h1>
+            <div>
+                <ul className="technologie">
+                    { skills }
+                </ul>
+            </div>
+            <p>{ projet.content }</p>
             <div className={ classes.Archive_img }>
                 <img src="https://cdn.dribbble.com/users/2268952/screenshots/15858805/media/2ef259f6ac1bfca532afa586698f162b.png" />
             </div>

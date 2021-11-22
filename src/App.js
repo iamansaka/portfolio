@@ -16,7 +16,7 @@ function App() {
         <Switch>
           <Route exact path={ routes.HOME } component={ Home } />
           <Route exact path={ routes.LABORATOIRE } component={ Laboratoire } />
-          <Route exact path={ routes.LABORATOIRE + '/:id' } component={ Archive } />
+          <Route exact path={ routes.LABORATOIRE + '/:slug' } component={ Archive } />
           <Route exact path={ routes.ABOUT } component={ About } />
           <Route component={ PageNotFund } />
         </Switch>
