@@ -18,10 +18,10 @@ function Laboratoire() {
                     for (let key in response.data) {
                         dataArray.push({
                             ...response.data[key],
-                            id: response.data[key]
+                            id: Date.now()
                         })
                     }
-                    // console.log(dataArray);
+                    dataArray.reverse();
                     setProjets(dataArray);
                 })
                 .catch(err => console.log(err))

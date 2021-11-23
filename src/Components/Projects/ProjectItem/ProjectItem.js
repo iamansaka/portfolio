@@ -10,8 +10,6 @@ import routes from "../../../Config/Routes";
 
 function ProjetItem(props) {
 
-    console.log(props);
-
     let skills = props.technologie.map(skill => (
         <Technologie key={ skill } color="color__gray" technologie={ skill } />
     ));

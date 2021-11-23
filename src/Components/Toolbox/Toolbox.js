@@ -34,7 +34,6 @@ function ToolBox(props) {
 
     let content;
     let title;
-    console.log(props.items);
 
     switch (props.type) {
         case "couleurs":

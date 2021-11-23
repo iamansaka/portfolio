@@ -2,31 +2,53 @@
 import React, { useState, useEffect } from "react";
 import classes from './Archive.module.css';
 import apiAxios from "../../../Config/api.axios";
+import routes from "../../../Config/Routes";
+
+// Notification
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Composant
 import ToolBox from "../../../Components/Toolbox/Toolbox";
 import Technologie from "../../../Components/Technologie/Technologie";
+import Slideshow from "../../../Components/Slideshow/Slideshow";
 
 function Archive(props) {
 
     // State
     const [technologies, setTechnologies] = useState([]);
     const [couleurs, setCouleurs] = useState([]);
+    const [imagesArray, setImagesArray] = useState([]);
     const [outils, setOutils] = useState([]);
     const [projet, setProjet] = useState({})
 
     useEffect(() => {
         apiAxios.get(`/works/${props.match.params.slug}`)
                 .then(response => {
+                    if (Object.keys(response.data).length === 0) {
+                        props.history.push(routes.LABORATOIRE);
+                        toast.error("Ce projet n'existe pas", {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: true,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        });
+                    }
                     for (let key in response.data) {
                         setProjet({...response.data[key]});
-                        setCouleurs(response.data[key].palettes);
+                        setCouleurs(response.data[key].palettes.map(el => el));
+                        setImagesArray(response.data[key].maquettes);
                         setOutils(response.data[key].outils);
                         setTechnologies(response.data[key].technologies)
                     }
                 })
                 .catch(err => console.log(err))
     }, [])
+
+    console.log(projet);
 
     let skills = technologies.map(skill => (
         <Technologie key={ skill } color="color__gray" technologie={ skill } />
@@ -41,9 +63,7 @@ function Archive(props) {
                 </ul>
             </div>
             <p>{ projet.content }</p>
-            <div className={ classes.Archive_img }>
-                <img src="https://cdn.dribbble.com/users/2268952/screenshots/15858805/media/2ef259f6ac1bfca532afa586698f162b.png" />
-            </div>
+            <Slideshow maquettes={ imagesArray } />
             <ToolBox type="couleurs" items={ couleurs } />
             <ToolBox type="outils" items={ outils } />
         </div>

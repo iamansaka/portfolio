@@ -15,7 +15,7 @@ function Hero(props) {
             <div className={ classes.wrapper }>
                 <p>
                     Bonjour, je m'appelle Ansaka, je suis un développeur web 
-                    en Alternance® situé à Toulouse, FRANCE. Spécialisé dans la 
+                    en alternance chez Dawan® situé à Toulouse, FRANCE. Spécialisé dans la 
                     conception et l'intégration de sites Web au pixel près.
                 </p>
                 <ul className="technologie">

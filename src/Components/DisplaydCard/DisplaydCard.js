@@ -4,15 +4,9 @@ import Card from "./Card/Card";
 import classes from "./DisplaydCard.module.css";
 
 function DisplaydCard(props) {
-    
-    console.log(props);
-
     return (
         <section  className={ classes.DisplaydCard }>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            { props.projets.map((projet, index) => <Card key={ index } {...projet} />) }
         </section>
     );
 }

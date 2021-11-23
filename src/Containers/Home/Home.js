@@ -19,10 +19,11 @@ function Home() {
                     for (let key in response.data) {
                         dataArray.push({
                             ...response.data[key],
-                            id: response.data[key]
+                            id: Date.now()
                         })
                     }
-                    console.log(dataArray);
+                    dataArray = dataArray.reverse();
+                    dataArray = dataArray.slice(0,3);
                     setProjets(dataArray);
                 })
                 .catch(err => console.log(err))

@@ -6,14 +6,14 @@
     transition: all .5s ease-in-out;
 }
 
-/* .Layout.background {
+.Layout.background {
     --primary: #ffff;
     --white: #171c28;
   
     background-color: var(--white);
     color: var(--primary);
     transition: all .5s ease-in-out;
-} */
+}
 
 .content {
     flex-grow: 1;
