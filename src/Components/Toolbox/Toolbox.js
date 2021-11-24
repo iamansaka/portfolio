@@ -13,8 +13,8 @@ const PaletteCouleurs = (props) => {
 
     return (
         <li className={ classes.Palette }>
-            <div onClick={() => copyColor(props.color)} style={{backgroundColor: props.color}} className={ classes.PaletteCouleur }>{ copySuccess ? copySuccess : null }</div>
-            <p>{ props.color}</p>
+            <div onClick={() => copyColor(props.color.toUpperCase())} style={{backgroundColor: props.color}} className={ classes.PaletteCouleur }>{ copySuccess ? copySuccess : null }</div>
+            <p>{ props.color.toUpperCase() }</p>
         </li>
     );
 }
@@ -23,7 +23,7 @@ const Outils = (props) => {
     return (
         <li className={ classes.Outil }>
         <span>
-            <img src={`/outils/${ props.outil.replace(' ','-').toLowerCase() }.svg`} alt={ props.outil } />
+            <img src={`/outils/${ props.outil.replace(' ','-').toLowerCase() }.png`} alt={ props.outil } />
         </span>
             <p>{ props.outil }</p>
         </li>
@@ -51,7 +51,7 @@ function ToolBox(props) {
     return (
         <div className={ classes.ToolBox }>
             <h2>{ title }</h2>
-            <ul>
+            <ul className={ props.type === "outils" ? classes.grid_outils : null }>
                 { content }
             </ul>
         </div>

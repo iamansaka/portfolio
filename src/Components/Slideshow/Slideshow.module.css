@@ -20,3 +20,17 @@
 .Slideshow:hover img {
     object-position: left bottom;
 }
+
+/*================ Responsive  ================*/
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+
+    .Slideshow {
+        max-height: 700px;
+    }
+
+    .Slideshow img {
+        height: 700px;
+    }
+}
